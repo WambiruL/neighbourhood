@@ -4,7 +4,7 @@
   <div class="login">
     {%if user.is_authenticated%}
     <div class="user" style="position: relative; left: 700px; top: 20px;">
-    <a href=""><p style="color: white;"><span style="color:plum; font-size: 30px">Hello, {{user}}</span></a>
+    <a href="{%url 'profile'%}"><p style="color: white;"><span style="color:plum; font-size: 30px">Hello, {{user}}</span></a>
     </p>
     </div>
     <p>
