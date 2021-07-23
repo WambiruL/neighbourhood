@@ -1,16 +1,28 @@
+from django.db.models.deletion import DO_NOTHING
+import neighbourhood
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.contrib import admin
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 # Create your models here.
+class Neighbourhood(models.Model):
+    name=models.CharField(max_length=200)
+    location=models.CharField(max_length=200)
+    occupants=models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     profile_image=models.ImageField(default='default.jpeg', upload_to='Profilepics/')
     bio=models.CharField(max_length=1000,null=True, default="My Bio")
     email=models.EmailField(max_length=200,null=True)
+    neighbourhood=models.ForeignKey(Neighbourhood,related_name='neighborhood',on_delete=DO_NOTHING,null=True)
 
     def __str__(self):
         return f'{self.user} Profile'
@@ -24,3 +36,4 @@ class Profile(models.Model):
     def save_user_profile(sender,instance,**kwargs):
         print("signal activated---->>>", dir(instance))
         instance.profile.save
+
