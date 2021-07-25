@@ -6,13 +6,12 @@
 {%endblock%}
 {%block content%}
 {%include 'navbar.html'%}
-<h1>HELLO,{{user}}</h1>
 
-<div class="important">
+<div class="neighbourhood">
     <ul>
         <li class="dropdown"  style="list-style-type: none;">
-            <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">CHOOSE YOUR NEIGHBOURHOOD<span class="caret"></span></a>
-            <ul class="dropdown-menu" style="text-align: center;" role="menu">
+            <a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret">CHOOSE YOUR NEIGHBOURHOOD</span></a>
+            <ul class="dropdown-menu" style="text-align: center; left: 30px;" role="menu">
             <li>
               <a href="">LANET</a>
             </li>
@@ -24,10 +23,6 @@
             <li>
               <a href="">KIAMUNYI</a>
             </li>
-            <hr>
-            <li>
-                <a href=""><button class="btn btn-danger">Back Home</button></a>
-              </li>
           </ul>
         </li>
     </ul>
