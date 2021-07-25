@@ -1,3 +1,4 @@
+import neighbourhood
 from django.shortcuts import render,redirect
 from .forms import CreateUserForm,UserUpdateForm,ProfleUpdateForm
 from .models import *
@@ -52,12 +53,15 @@ def profileView(request):
     return render(request,'profile.html',ctx)
 
 def lanet(request):
-    businesses=Business.objects.all()
+   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   lanet = Neighbourhood.objects.filter(neighbourhood=lanet_neighbourhood)
+   return render(request,'lanet.html', {'lanet':lanet})
 
-    context={
-        "businesses":businesses,
-    }
-    return render(request,'lanet.html',context)
+def milimani(request):
+   milimani_neighbourhood = Neighbourhood.objects.get(pk=2)
+   milimani = Neighbourhood.objects.filter(neighbourhood=milimani_neighbourhood)
+   return render(request,'milimani.html', {'milimani':milimani})
+
 
 
 

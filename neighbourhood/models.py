@@ -40,7 +40,7 @@ class Profile(models.Model):
     profile_image=models.ImageField(default='default.jpeg', upload_to='Profilepics/')
     bio=models.CharField(max_length=1000,null=True, default="My Bio")
     email=models.EmailField(max_length=200,null=True)
-    neighbourhood=models.ForeignKey(Neighbourhood,related_name='neighborhood',on_delete=DO_NOTHING,null=True)
+    neighbourhood=models.ForeignKey(Neighbourhood,related_name='neighbourhood',on_delete=DO_NOTHING,null=True)
 
     def __str__(self):
         return f'{self.user} Profile'

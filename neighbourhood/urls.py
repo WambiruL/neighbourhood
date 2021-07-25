@@ -10,4 +10,5 @@ urlpatterns=[
     url(r'^logout/',auth_views.LogoutView.as_view(), {"next_page": '/login'}, name='logout',),
     url(r'profile/',views.profileView,name='profile'),
     url(r'lanet/',views.lanet,name='lanet'),
+    url(r'milimani/',views.milimani,name='milimani'),
 ]
