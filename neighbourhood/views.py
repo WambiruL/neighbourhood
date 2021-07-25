@@ -19,7 +19,12 @@ def registerPage(request):
 
 @login_required(login_url='/login')
 def index(request):
-    return render(request,'index.html')
+    neighbourhood=Neighbourhood.objects.all()
+
+    context={
+        "neighbourhood":neighbourhood,
+    }
+    return render(request,'index.html',context)
 
 def profileView(request):
     logged_in_user=request.user #logged in user
