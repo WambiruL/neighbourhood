@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .forms import CreateUserForm,UserUpdateForm,ProfleUpdateForm
 from .models import *
 from django.contrib.auth.decorators import login_required
+from .forms import *
 
 # Create your views here.
 def registerPage(request):
@@ -79,6 +80,20 @@ def kiamunyiBusiness(request):
 def kiamunyi(request):
    kiamunyi= Neighbourhood.objects.get(pk=3)
    return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
+
+def submitBusiness(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = BusinessUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('lanetB')
+    else:
+        form =BusinessUploadForm()
+            
+    return render(request,'business_form.html',{"form":form,})
 
 
 

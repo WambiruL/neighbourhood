@@ -4,18 +4,27 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-        <ul class="navbar-nav mr-auto smooth-scroll">
+         <ul class="navbar-nav mr-auto smooth-scroll">
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'index'%}">Home
+            <a class="nav-link" href="{%url 'lanet'%}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'lanetB'%}" data-offset="90">Business</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
+            <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; color: burlywood;" role="menu">
+                <li>
+                  <a href="{%url 'lanetB'%}">View Businesses</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="{%url 'business_form'%}">Submit Your Business</a>
+                  </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#features" data-offset="90">Authorities</a>
@@ -24,5 +33,6 @@
             <a class="nav-link" href="#services" data-offset="90">Health Services</a>
           </li>
         </ul>
+       </div>
 
-  </nav>
+</nav>

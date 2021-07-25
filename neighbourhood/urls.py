@@ -15,4 +15,5 @@ urlpatterns=[
     url(r'lanetB/',views.lanetBusiness,name='lanetB'),
     url(r'milimaniB/',views.milimaniBusiness,name='milimaniB'),
     url(r'kiamunyiB/',views.kiamunyiBusiness,name='kiamunyiB'),
+    url(r'business_form/',views.submitBusiness,name='business_form'),
 ]

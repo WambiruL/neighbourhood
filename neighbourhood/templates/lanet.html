@@ -6,10 +6,13 @@
 {% block content %}
 {%include 'navbar2.html'%}
 
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-12 top-div" style="margin-top:40px;"></div>
   </div>
+
 
 
 <div class="row">
@@ -34,7 +37,7 @@
       <div class="modal-body">
         <img class="card-img-top" src="{{business.logo.url}}" height=200 width=100 >
 
-        <p><span style="font-weight:bold;">Owner:</span> {{business.user}}</p>
+        <p><span style="font-weight:bold;">Owner:</span> {{business.owner}}</p>
         <p><span style="font-weight:bold;">Description:</span> {{business.description|safe}}</p>
       </div>
       <div class="modal-footer" style="display:block;">

@@ -21,3 +21,10 @@ class ProfleUpdateForm(forms.ModelForm):
         model=Profile
         fields=['profile_image', 'bio','neighbourhood']
 
+
+class BusinessUploadForm(forms.ModelForm):
+
+    class Meta:
+        model = Business
+        fields = ['name','email','logo','description','owner']
+
