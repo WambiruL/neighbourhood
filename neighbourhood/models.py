@@ -1,9 +1,8 @@
 from django.db.models.deletion import DO_NOTHING
-import neighbourhood
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
-from django.contrib import admin
+from tinymce.models import HTMLField
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -55,4 +54,15 @@ class Profile(models.Model):
     def save_user_profile(sender,instance,**kwargs):
         print("signal activated---->>>", dir(instance))
         instance.profile.save
+
+class Business(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    logo = models.ImageField(upload_to='businesslogo/')
+    description = HTMLField()
+    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 

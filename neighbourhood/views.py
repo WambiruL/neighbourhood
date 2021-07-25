@@ -51,4 +51,13 @@ def profileView(request):
    
     return render(request,'profile.html',ctx)
 
+def lanet(request):
+    businesses=Business.objects.all()
+
+    context={
+        "businesses":businesses,
+    }
+    return render(request,'lanet.html',context)
+
+
 
