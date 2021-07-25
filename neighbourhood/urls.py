@@ -11,4 +11,8 @@ urlpatterns=[
     url(r'profile/',views.profileView,name='profile'),
     url(r'lanet/',views.lanet,name='lanet'),
     url(r'milimani/',views.milimani,name='milimani'),
+    url(r'kiamunyi/',views.kiamunyi,name='kiamunyi'),
+    url(r'lanetB/',views.lanetBusiness,name='lanetB'),
+    url(r'milimaniB/',views.milimaniBusiness,name='milimaniB'),
+    url(r'kiamunyiB/',views.kiamunyiBusiness,name='kiamunyiB'),
 ]

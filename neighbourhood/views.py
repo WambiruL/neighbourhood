@@ -52,20 +52,32 @@ def profileView(request):
    
     return render(request,'profile.html',ctx)
 
-def lanet(request):
+def lanetBusiness(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
-   lanet = Business.objects.filter(neighbourhood=lanet_neighbourhood)
+   businesses = Business.objects.filter(neighbourhood=lanet_neighbourhood)
+   return render(request,'lanet.html', {'businesses':businesses})
+
+def lanet(request):
+   lanet= Neighbourhood.objects.get(pk=1)
    return render(request,'lanet.html', {'lanet':lanet})
    
 
-def milimani(request):
+def milimaniBusiness(request):
    milimani_neighbourhood = Neighbourhood.objects.get(pk=2)
-   milimani = Business.objects.filter(neighbourhood=milimani_neighbourhood)
+   businesses = Business.objects.filter(neighbourhood=milimani_neighbourhood)
+   return render(request,'milimani.html', {'businesses':businesses})
+
+def milimani(request):
+   milimani= Neighbourhood.objects.get(pk=2)
    return render(request,'milimani.html', {'milimani':milimani})
 
-def kiamunyi(request):
+def kiamunyiBusiness(request):
    kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=3)
    kiamunyi =  Business.objects.filter(neighbourhood=kiamunyi_neighbourhood)
+   return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
+
+def kiamunyi(request):
+   kiamunyi= Neighbourhood.objects.get(pk=3)
    return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
 
 
