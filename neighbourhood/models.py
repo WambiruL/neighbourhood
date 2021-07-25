@@ -12,10 +12,29 @@ from django.dispatch import receiver
 class Neighbourhood(models.Model):
     name=models.CharField(max_length=200)
     location=models.CharField(max_length=200)
-    occupants=models.IntegerField(default=0)
+    occupants=models.PositiveIntegerField(default=0)
+    admin = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name
+
+
+    @classmethod
+    def find_neighbourhood(cls, search_term):
+        search_results = cls.objects.filter(neighbourhood_name__icontains = search_term)
+        return search_results
+
+    def save_neighbourhood(self):
+        self.save()
+
+    def delete_neighbourhood(self):
+        self.delete()
+
+    def update_neighbourhood(self, neighbourhood_name):
+        self.neighbourhood_name = neighbourhood_name
+        self.save()
+
+
 
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
