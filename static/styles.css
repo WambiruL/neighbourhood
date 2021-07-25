@@ -43,4 +43,12 @@ nav{
   a:hover{
       text-decoration: none;
   }
+
+.card{
+    width: 20rem;
+    margin-top:10px; 
+    border-radius: 50px; 
+    background-color: burlywood;
+    
+}
   
