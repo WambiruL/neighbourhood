@@ -61,3 +61,24 @@ body{
 .navbar-nav{
     position:relative;
 }
+
+#cf6_image {
+    margin:0 auto;
+    width:1520px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    background-image:url("./Images/lanet1.jpg");
+    height: 600px;
+
+  }
+  
+  #cf6_image:hover {
+    background-image:url("./Images/neighbour.jpg");
+   
+  }
+  h1{
+      color: white;
+      text-align: center;
+  }
