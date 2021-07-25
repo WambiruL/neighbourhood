@@ -19,7 +19,7 @@ class Neighbourhood(models.Model):
 
 
     @classmethod
-    def find_neighbourhood(cls, search_term):
+    def find_neighbourhood_by_id(cls, search_term):
         search_results = cls.objects.filter(neighbourhood_name__icontains = search_term)
         return search_results
 
@@ -60,9 +60,20 @@ class Business(models.Model):
     email = models.EmailField()
     logo = models.ImageField(upload_to='businesslogo/')
     description = HTMLField()
-    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    neighbourhood = models.ForeignKey(Neighbourhood,related_name='business', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+
+    @classmethod
+    def search_by_business_name(cls, search_term):
+        business = cls.objects.filter(business_name__icontains=search_term)
+        return business
+
+    def save_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
 
