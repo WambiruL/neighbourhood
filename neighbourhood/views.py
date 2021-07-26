@@ -61,7 +61,7 @@ def lanetBusiness(request):
 def lanetAuth(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
    authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
-   return render(request,'lanet.html', {'authorities':authorities})
+   return render(request,'authorities.html', {'authorities':authorities})
 
 
 def lanet(request):

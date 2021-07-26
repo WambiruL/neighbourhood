@@ -10,51 +10,6 @@
 <div id="cf6_image" class="shadow"></div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 top-div" style="margin-top:40px;"></div>
-  </div>
-
-
-
-
-
-<div class="row">
-    {% for authority in authorities %}
-    <div class="col-md-6">
-    <div class="card" data-toggle="modal" data-target="#{{authority.id}}" >
-    <div class="card-body">
-        <h3 class="card-title" style="text-align: center;">{{authority.name|truncatechars:19}}</h3>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-<!--Authorities modal-->
-<div class="modal fade" id="{{authority.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content text-center">
-        <div class="modal-header text-center">
-          <h3 class="text-center">{{authority.name}}</h3>
-        </div>
-        <div class="modal-footer" style="display:block;">
-  
-          <h4 class="text-center">Contacts</h4>
-          <p><span class="bold">Email:</span> {{authority.email}}</p>
-          <p><span class="bold">Contact:</span> {{authority.contact}}</p>
-      </div>
-  
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-  </div>
-  
-  </div>
 <style>
 .bold{
   font-weight: bold;
