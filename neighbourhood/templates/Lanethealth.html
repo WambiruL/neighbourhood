@@ -32,11 +32,11 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'auth'%}" data-offset="90">Authorities</a>
+              <a class="nav-link" href="{%url 'Lauth'%}" data-offset="90">Authorities</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{%url 'health'%}" data-offset="90">Health Services</a>
-              </li>
+              <a class="nav-link" href="{%url 'Lhealth'%}" data-offset="90">Health Services</a>
+            </li>
           </ul>
          </div>
   
@@ -44,12 +44,12 @@
   <br><br>
   <br><br>
   <div class="row">
-      {% for authority in authorities %}
+      {% for health in hcenters %}
       
       <div class="col-md-4" style="width:90px; height: 700px; position: relative; left:250px; display: flex; justify-content: space-evenly;">
-          <div class="card" data-toggle="modal" data-target="#{{authority.id}}" style="height: 100px;">
+          <div class="card" data-toggle="modal" data-target="#{{health.id}}" style="height: 100px;">
               <div class="card-body">
-                  <h3 class="card-title" style="text-align: center;">{{authority.name|truncatechars:19}}</h3>
+                  <h3 class="card-title" style="text-align: center;">{{health.name|truncatechars:19}}</h3>
               </div>
   
       
@@ -60,16 +60,16 @@
     
   
     <!-- Business Modal -->
-      <div class="modal fade" id="{{authority.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="{{health.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content text-center">
                   <div class="modal-header text-center">
-                      <h3 class="text-center">{{authority.name}}</h3>
+                      <h3 class="text-center">{{health.name}}</h3>
                   </div>
                   <div class="modal-footer" style="display:block;">
                       <h4 class="text-center">Contacts</h4>
-                      <p><span class="bold">Email:</span> {{authority.email}}</p>
-                      <p><span class="bold">Phone:</span> {{authority.contact}}</p>
+                      <p><span class="bold">Email:</span> {{health.email}}</p>
+                      <p><span class="bold">Phone:</span> {{health.contact}}</p>
                   </div>
               </div>
           </div>

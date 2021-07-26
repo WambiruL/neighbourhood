@@ -71,12 +71,22 @@ def kiamunyiBusiness(request):
 def lanetAuth(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
    authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
-   return render(request,'authorities.html', {'authorities':authorities})
+   return render(request,'Lanetauthorities.html', {'authorities':authorities})
+
+def milimaniAuth(request):
+   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   authorities = Authorities.objects.filter(neighbourhood=milimani_neighbourhood)
+   return render(request,'Milimaniauthorities.html', {'authorities':authorities})
 
 def lanetHealth(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
    hcenters = Health.objects.filter(neighbourhood=lanet_neighbourhood)
-   return render(request,'health.html', {'hcenters':hcenters})
+   return render(request,'Lanethealth.html', {'hcenters':hcenters})
+
+def milimaniHealth(request):
+   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   hcenters = Health.objects.filter(neighbourhood=milimani_neighbourhood)
+   return render(request,'Milimanihealth.html', {'hcenters':hcenters})
 
 
 @login_required(login_url='/login')
@@ -88,18 +98,18 @@ def lanet(request):
 
 @login_required(login_url='/login')
 def milimani(request):
-   milimani= Neighbourhood.objects.get(pk=2)
+   milimani= Neighbourhood.objects.get(pk=3)
    return render(request,'milimani.html', {'milimani':milimani})
 
 def kiamunyiBusiness(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=3)
+   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
    businesses =  Business.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'kiamunyi.html', {'businesses':businesses})
 
 
 @login_required(login_url='/login')
 def kiamunyi(request):
-   kiamunyi= Neighbourhood.objects.get(pk=3)
+   kiamunyi= Neighbourhood.objects.get(pk=2)
    return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
 
 def submitBusiness(request):

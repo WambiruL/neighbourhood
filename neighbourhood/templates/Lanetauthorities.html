@@ -1,0 +1,98 @@
+{%extends 'index.html'%}
+  {%load static%}
+  {%load bootstrap4%}
+  {%block content%}
+  
+  <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" style="color: white;" href="{%url 'index' %}"><h3><strong>NEIGHBOURHOOD WATCH</strong></h3></a>
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  
+           <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'lanet'%}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
+              <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; color: burlywood;" role="menu">
+                  <li>
+                    <a href="{%url 'Lbusiness'%}">View Businesses</a>
+                  </li>
+                  <hr>
+                  <li>
+                      <a href="{%url 'business_form'%}">Submit Your Business</a>
+                    </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'Lauth'%}" data-offset="90">Authorities</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'Lhealth'%}" data-offset="90">Health Services</a>
+              </li>
+          </ul>
+         </div>
+  
+  </nav>
+  <br><br>
+  <br><br>
+  <div class="row">
+      {% for authority in authorities %}
+      
+      <div class="col-md-4" style="width:90px; height: 700px; position: relative; left:250px; display: flex; justify-content: space-evenly;">
+          <div class="card" data-toggle="modal" data-target="#{{authority.id}}" style="height: 100px;">
+              <div class="card-body">
+                  <h3 class="card-title" style="text-align: center;">{{authority.name|truncatechars:19}}</h3>
+              </div>
+  
+      
+          </div>
+      </div>
+     
+      
+    
+  
+    <!-- Business Modal -->
+      <div class="modal fade" id="{{authority.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content text-center">
+                  <div class="modal-header text-center">
+                      <h3 class="text-center">{{authority.name}}</h3>
+                  </div>
+                  <div class="modal-footer" style="display:block;">
+                      <h4 class="text-center">Contacts</h4>
+                      <p><span class="bold">Email:</span> {{authority.email}}</p>
+                      <p><span class="bold">Phone:</span> {{authority.contact}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+    <br>
+    {%endblock%}
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"
+  ></script>
+  </div>
+  
+  </div>
