@@ -21,6 +21,8 @@ def registerPage(request):
     context={'form':form}
     return render(request,'registration/registration.html',context)
 
+
+@login_required(login_url='/login')
 def index(request):
     neighbourhood=Neighbourhood.objects.all()
 
@@ -116,20 +118,17 @@ def kiamunyiPost(request):
    return render(request,'KiamunyiPosts.html', {'posts':posts})
 
 
-@login_required(login_url='/login')
 def lanet(request):
     lanet = get_object_or_404(Neighbourhood, pk=1)
 
     return render(request,'lanet.html', {'lanet':lanet})
 
-
-@login_required(login_url='/login')
 def milimani(request):
    milimani = get_object_or_404(Neighbourhood, pk=3)
 
    return render(request,'milimani.html', {'milimani':milimani})
 
-@login_required(login_url='/login')
+
 def kiamunyi(request):
   kiamunyi = get_object_or_404(Neighbourhood, pk=2)
   return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
