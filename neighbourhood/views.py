@@ -65,13 +65,18 @@ def milimaniBusiness(request):
 def kiamunyiBusiness(request):
    kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
    businesses =  Business.objects.filter(neighbourhood=kiamunyi_neighbourhood)
-   return render(request,'business.html', {'businesses':businesses})
+   return render(request,'Kiamunyibusiness.html', {'businesses':businesses})
 
 
 def lanetAuth(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
    authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'Lanetauthorities.html', {'authorities':authorities})
+
+def kiamunyiAuth(request):
+   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   authorities = Authorities.objects.filter(neighbourhood=kiamunyi_neighbourhood)
+   return render(request,'Kiamunyiauthorities.html', {'authorities':authorities})
 
 def milimaniAuth(request):
    milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
@@ -88,6 +93,11 @@ def milimaniHealth(request):
    hcenters = Health.objects.filter(neighbourhood=milimani_neighbourhood)
    return render(request,'Milimanihealth.html', {'hcenters':hcenters})
 
+def kiamunyiHealth(request):
+   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   hcenters = Health.objects.filter(neighbourhood=kiamunyi_neighbourhood)
+   return render(request,'Kiamunyihealth.html', {'hcenters':hcenters})
+
 
 @login_required(login_url='/login')
 def lanet(request):
@@ -95,22 +105,16 @@ def lanet(request):
    return render(request,'lanet.html', {'lanet':lanet})
 
 
-
 @login_required(login_url='/login')
 def milimani(request):
    milimani= Neighbourhood.objects.get(pk=3)
    return render(request,'milimani.html', {'milimani':milimani})
 
-def kiamunyiBusiness(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
-   businesses =  Business.objects.filter(neighbourhood=kiamunyi_neighbourhood)
-   return render(request,'kiamunyi.html', {'businesses':businesses})
-
-
 @login_required(login_url='/login')
 def kiamunyi(request):
    kiamunyi= Neighbourhood.objects.get(pk=2)
    return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
+
 
 def submitBusiness(request):
     current_user = request.user

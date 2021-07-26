@@ -20,4 +20,7 @@ urlpatterns=[
     url(r'Mbusiness/',views.milimaniBusiness,name='Mbusiness'),
     url(r'kiamunyiB/',views.kiamunyiBusiness,name='kiamunyiB'),
     url(r'business_form/',views.submitBusiness,name='business_form'),
+    url(r'Kbusiness/',views.kiamunyiBusiness,name='Kbusiness'),
+    url(r'Kauth/',views.kiamunyiAuth,name='Kauth'),
+    url(r'Khealth/',views.kiamunyiHealth,name='Khealth'),
 ]

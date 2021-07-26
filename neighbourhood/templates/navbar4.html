@@ -5,17 +5,33 @@
  
         <ul class="navbar-nav mr-auto smooth-scroll">
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'index'%}">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{%url 'kiamunyi'%}">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'kiamunyiB'%}" data-offset="90">Business</a>
+            <a class="nav-link" href="{%url 'Kbusiness'%}" data-offset="90">Business</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features" data-offset="90">Authorities</a>
+            <a class="nav-link" href="{%url 'Kauth'%}" data-offset="90">Authorities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services" data-offset="90">Health Services</a>
+            <a class="nav-link" href="{%url 'Khealth'%}" data-offset="90">Health Services</a>
           </li>
         </ul>
+
+        <div class="login">
+          {%if user.is_authenticated%}
+          <div class="user" style="position: relative; right: 170px; top: 20px;">
+          <a href="{%url 'profile'%}"><p style="color: white;"><span style="color:burlywood; font-size: 30px">Hello, {{user}}</span></a>
+          </p>
+      
+          </div>
+          <p>
+            <h4><a href="{%url 'logout'%}" style="position: relative;color: white; bottom: 30px;">Logout</a></h4>
+          </p>
+          {%else%}
+          <a href="{%url 'register'%}" style="position: relative; left: 500px">Register</a>
+          <a href="{%url 'login'%}" style="position: relative; left: 660px">Login</a>
+          {%endif%}
+        </div>
 
   </nav>

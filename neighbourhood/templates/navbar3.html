@@ -3,29 +3,18 @@
 
   <a href="{%url 'index'%}"><button class="btn">LEAVE NEIGHBOURHOOD</button></a>
  
-      <ul class="navbar-nav mr-auto smooth-scroll" style="display: flex; justify-content: space-between;">
+      <<ul class="navbar-nav mr-auto smooth-scroll">
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'milimani'%}">Home
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link" href="{%url 'kiamunyi'%}">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
-          <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; color: burlywood;" role="menu">
-              <li>
-                <a href="{%url 'Mbusiness'%}">View Businesses</a>
-              </li>
-              <hr>
-              <li>
-                  <a href="{%url 'business_form'%}">Submit Your Business</a>
-                </li>
-          </ul>
+          <a class="nav-link" href="{%url 'Kbusiness'%}" data-offset="90">Business</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'Mauth'%}" data-offset="90">Authorities</a>
+          <a class="nav-link" href="{%url 'Kauth'%}" data-offset="90">Authorities</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'Mhealth'%}" data-offset="90">Health Services</a>
+          <a class="nav-link" href="{%url 'Khealth'%}" data-offset="90">Health Services</a>
         </li>
       </ul>
 

@@ -5,55 +5,40 @@
 
 {% block content %}
 {%include 'navbar4.html'%}
+<h1 style="color: white;">WELCOME TO KIAMUNYI</h1>
+<br>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 top-div" style="margin-top:40px;"></div>
-  </div>
-
-
-<div class="row">
-  {% for business in businesses %}
-  <div class="col-md-6">
-  <div class="card" data-toggle="modal" data-target="#{{business.id}}" >
-  <div class="card-body">
-      <h3 class="card-title" style="text-align: center;">{{business.name|truncatechars:19}}</h3>
-  </div>
-</div>
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="{{business.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content text-center">
-      <div class="modal-header text-center">
-        <h3 class="text-center">{{business.name}}</h3>
-      </div>
-      <div class="modal-body">
-        <img class="card-img-top" src="{{business.logo.url}}" height=200 width=100 >
-
-        <p><span style="font-weight:bold;">Owner:</span> {{business.user}}</p>
-        <p><span style="font-weight:bold;">Description:</span> {{business.description|safe}}</p>
-      </div>
-      <div class="modal-footer" style="display:block;">
-
-        <h4 class="text-center">Contacts</h4>
-        <p><span class="bold">Email:</span> {{business.email}}</p>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" id="milimani">
+            <img class="d-block w-100" src="/static/Images/kiam3.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item"id="milimani">
+            <img class="d-block w-100" src="/static/Images/kiam2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item"id="milimani">
+            <img class="d-block w-100" src="/static/Images/kiam.jpg" alt="Third slide">
+        </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+{%endblock%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    </div>
-  </div>
-</div>
-{% endfor %}
-</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</div>
-<style>
-.bold{
-  font-weight: bold;
-}
-</style>
-{% endblock %}
-s
+ 
