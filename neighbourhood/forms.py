@@ -26,5 +26,5 @@ class BusinessUploadForm(forms.ModelForm):
 
     class Meta:
         model = Business
-        fields = ['name','email','logo','description','owner']
+        fields = ['name','email','logo','description','owner','neighbourhood']
 

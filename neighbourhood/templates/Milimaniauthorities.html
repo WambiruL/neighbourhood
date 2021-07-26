@@ -21,15 +21,15 @@
             </li>
             <li class="nav-item">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
-              <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; color: burlywood;" role="menu">
-                  <li>
-                    <a href="{%url 'Mbusiness'%}">View Businesses</a>
+              <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; background-color: burlywood;" role="menu">
+                <li>
+                  <a href="{%url 'Mbusiness'%}" style="color: black;">View Businesses</a>
+                </li>
+                <hr>
+                <li>
+                    <a href="{%url 'business_form'%}"style="color: black;">Submit Your Business</a>
                   </li>
-                  <hr>
-                  <li>
-                      <a href="{%url 'business_form'%}">Submit Your Business</a>
-                    </li>
-              </ul>
+            </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{%url 'Mauth'%}" data-offset="90">Authorities</a>
@@ -46,8 +46,8 @@
   <div class="row">
       {% for authority in authorities %}
       
-      <div class="col-md-4" style="width:90px; height: 700px; position: relative; left:250px; display: flex; justify-content: space-evenly;">
-          <div class="card" data-toggle="modal" data-target="#{{authority.id}}" style="height: 100px;">
+      <div class="col-md-5" style="position: relative; left:250px; display: flex; justify-content: space-evenly;">
+          <div class="card" data-toggle="modal" data-target="#{{authority.id}}" style="height: 100px;background-color: burlywood; border-radius: 50px">
               <div class="card-body">
                   <h3 class="card-title" style="text-align: center;">{{authority.name|truncatechars:19}}</h3>
               </div>

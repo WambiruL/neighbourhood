@@ -116,7 +116,7 @@ def kiamunyi(request):
    return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
 
 
-def submitBusiness(request):
+def submitBusinessK(request):
     current_user = request.user
     if request.method == 'POST':
         form = BusinessUploadForm(request.POST, request.FILES)
@@ -124,7 +124,35 @@ def submitBusiness(request):
             home = form.save(commit=False)
             home.profile =current_user
             form.save()
-        return redirect('')
+        return redirect('Kbusiness')
+    else:
+        form =BusinessUploadForm()
+            
+    return render(request,'business_form.html',{"form":form,})
+
+def submitBusinessL(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = BusinessUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('Lbusiness')
+    else:
+        form =BusinessUploadForm()
+            
+    return render(request,'business_form.html',{"form":form,})
+
+def submitBusinessM(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = BusinessUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('Mbusiness')
     else:
         form =BusinessUploadForm()
             

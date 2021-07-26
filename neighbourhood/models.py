@@ -60,8 +60,8 @@ class Business(models.Model):
     email = models.EmailField()
     logo = models.ImageField(upload_to='businesslogo/')
     description = HTMLField()
-    neighbourhood = models.ForeignKey(Neighbourhood,related_name='business', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    neighbourhood = models.ForeignKey(Neighbourhood,related_name='business', on_delete=models.CASCADE,null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
     owner=models.CharField(max_length=250,null=True)
 
     def __str__(self):
