@@ -90,6 +90,11 @@ body{
       height: 600px;
 
   }
+
+  #milimani{
+    background-size: cover;
+    background-position: center;
+  }
   .img{
       background-size: cover;
       background-position: center;
