@@ -78,3 +78,14 @@ class Business(models.Model):
     def delete_business(self):
         self.delete()
 
+class Authorities(models.Model):
+    neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
+    name =models.CharField(max_length=100)
+    email = models.EmailField()
+    contact = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+
+

@@ -56,7 +56,13 @@ def profileView(request):
 def lanetBusiness(request):
    lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
    businesses = Business.objects.filter(neighbourhood=lanet_neighbourhood)
-   return render(request,'lanet.html', {'businesses':businesses})
+   return render(request,'business.html', {'businesses':businesses})
+
+def lanetAuth(request):
+   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
+   return render(request,'lanet.html', {'authorities':authorities})
+
 
 def lanet(request):
    lanet= Neighbourhood.objects.get(pk=1)

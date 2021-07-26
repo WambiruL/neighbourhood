@@ -82,3 +82,6 @@ body{
       color: white;
       text-align: center;
   }
+  .col-md-4{
+      background-image: linear-gradient(white,burlywood);
+  }
