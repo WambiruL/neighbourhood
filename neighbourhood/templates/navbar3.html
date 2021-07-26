@@ -1,28 +1,48 @@
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" style="color: white;" href="{%url 'index' %}"><h3><strong>NEIGHBOURHOOD WATCH</strong></h3></a>
-  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <a class="navbar-brand" style="color: white;" href="{%url 'index' %}"><h3><strong>NEIGHBOURHOOD WATCH</strong></h3></a>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+     
+      <ul class="navbar-nav mr-auto smooth-scroll" style="display: flex; justify-content: space-between;">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'milimani'%}">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
+          <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; color: burlywood;" role="menu">
+              <li>
+                <a href="{%url 'Mbusiness'%}">View Businesses</a>
+              </li>
+              <hr>
+              <li>
+                  <a href="{%url 'business_form'%}">Submit Your Business</a>
+                </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-offset="90">Authorities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-offset="90">Health Services</a>
+        </li>
+      </ul>
 
-        <ul class="navbar-nav mr-auto smooth-scroll">
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'index'%}">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'milimaniB'%}" data-offset="90">Business</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#features" data-offset="90">Authorities</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services" data-offset="90">Health Services</a>
-          </li>
-        </ul>
+      <div class="login">
+          {%if user.is_authenticated%}
+          <div class="user" style="position: relative; right: 170px; top: 20px;">
+          <a href="{%url 'profile'%}"><p style="color: white;"><span style="color:burlywood; font-size: 30px">Hello, {{user}}</span></a>
+          </p>
+      
+          </div>
+          <p>
+            <h4><a href="{%url 'logout'%}" style="position: relative;color: white; bottom: 30px;">Logout</a></h4>
+          </p>
+          {%else%}
+          <a href="{%url 'register'%}" style="position: relative; left: 500px">Register</a>
+          <a href="{%url 'login'%}" style="position: relative; left: 660px">Login</a>
+          {%endif%}
+        </div>
+    
 
-  </nav>
+</nav>

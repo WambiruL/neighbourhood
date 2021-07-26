@@ -12,10 +12,10 @@ urlpatterns=[
     url(r'lanet/',views.lanet,name='lanet'),
     url(r'milimani/',views.milimani,name='milimani'),
     url(r'kiamunyi/',views.kiamunyi,name='kiamunyi'),
-    url(r'business/',views.lanetBusiness,name='business'),
+    url(r'Lbusiness/',views.lanetBusiness,name='Lbusiness'),
     url(r'auth/',views.lanetAuth,name='auth'),
-      url(r'health/',views.lanetHealth,name='health'),
-    url(r'milimaniB/',views.milimaniBusiness,name='milimaniB'),
+    url(r'health/',views.lanetHealth,name='health'),
+    url(r'Mbusiness/',views.milimaniBusiness,name='Mbusiness'),
     url(r'kiamunyiB/',views.kiamunyiBusiness,name='kiamunyiB'),
     url(r'business_form/',views.submitBusiness,name='business_form'),
 ]
