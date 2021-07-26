@@ -4,6 +4,8 @@ from .forms import CreateUserForm,UserUpdateForm,ProfleUpdateForm
 from .models import *
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 def registerPage(request):
@@ -116,19 +118,21 @@ def kiamunyiPost(request):
 
 @login_required(login_url='/login')
 def lanet(request):
-   lanet= Neighbourhood.objects.get(pk=1)
-   return render(request,'lanet.html', {'lanet':lanet})
+    lanet = get_object_or_404(Neighbourhood, pk=1)
+
+    return render(request,'lanet.html', {'lanet':lanet})
 
 
 @login_required(login_url='/login')
 def milimani(request):
-   milimani= Neighbourhood.objects.get(pk=3)
+   milimani = get_object_or_404(Neighbourhood, pk=3)
+
    return render(request,'milimani.html', {'milimani':milimani})
 
 @login_required(login_url='/login')
 def kiamunyi(request):
-   kiamunyi= Neighbourhood.objects.get(pk=2)
-   return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
+  kiamunyi = get_object_or_404(Neighbourhood, pk=2)
+  return render(request,'kiamunyi.html', {'kiamunyi':kiamunyi})
 
 
 def submitBusinessK(request):
