@@ -55,63 +55,63 @@ def profileView(request):
     return render(request,'profile.html',ctx)
 
 def lanetBusiness(request):
-   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   lanet_neighbourhood = Neighbourhood.objects.filter(pk=1)
    businesses = Business.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'Lanetbusiness.html', {'businesses':businesses})
 
 def milimaniBusiness(request):
-   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   milimani_neighbourhood = Neighbourhood.objects.filter(pk=3)
    businesses = Business.objects.filter(neighbourhood=milimani_neighbourhood)
    return render(request,'Milimanibusiness.html', {'businesses':businesses})
 
 def kiamunyiBusiness(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   kiamunyi_neighbourhood = Neighbourhood.objects.filter(pk=2)
    businesses =  Business.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'Kiamunyibusiness.html', {'businesses':businesses})
 
 
 def lanetAuth(request):
-   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   lanet_neighbourhood = Neighbourhood.objects.filter(pk=1)
    authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'Lanetauthorities.html', {'authorities':authorities})
 
 def kiamunyiAuth(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   kiamunyi_neighbourhood =Neighbourhood.objects.filter(pk=2)
    authorities = Authorities.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'Kiamunyiauthorities.html', {'authorities':authorities})
 
 def milimaniAuth(request):
-   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   milimani_neighbourhood = Neighbourhood.objects.filter(pk=3)
    authorities = Authorities.objects.filter(neighbourhood=milimani_neighbourhood)
    return render(request,'Milimaniauthorities.html', {'authorities':authorities})
 
 def lanetHealth(request):
-   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   lanet_neighbourhood = Neighbourhood.objects.filter(pk=1)
    hcenters = Health.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'Lanethealth.html', {'hcenters':hcenters})
 
 def milimaniHealth(request):
-   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   milimani_neighbourhood = Neighbourhood.objects.filter(pk=3)
    hcenters = Health.objects.filter(neighbourhood=milimani_neighbourhood)
    return render(request,'Milimanihealth.html', {'hcenters':hcenters})
 
 def kiamunyiHealth(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   kiamunyi_neighbourhood = Neighbourhood.objects.filter(pk=2)
    hcenters = Health.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'Kiamunyihealth.html', {'hcenters':hcenters})
 
 def lanetPost(request):
-   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   lanet_neighbourhood= Neighbourhood.objects.filter(pk=1)
    posts = BlogPost.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'LanetPosts.html', {'posts':posts})
 
 def milimaniPost(request):
-   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   milimani_neighbourhood = Neighbourhood.objects.filter(pk=3)
    posts = BlogPost.objects.filter(neighbourhood=milimani_neighbourhood)
    return render(request,'MilimaniPosts.html', {'posts':posts})
 
 def kiamunyiPost(request):
-   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   kiamunyi_neighbourhood = Neighbourhood.objects.filter(pk=2)
    posts = BlogPost.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'KiamunyiPosts.html', {'posts':posts})
 
