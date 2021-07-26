@@ -1,0 +1,27 @@
+{%extends 'index.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="container-fluid" style="height: 50px;">
+    {% if businesses %}
+      <h2 style="color:white;" >Found {{ businesses|length }} of searched business {{message}}</h2><br>
+    {% else %}
+      <h2 style="color: white;"> Found 0 businesses for the search term {{message}}</h2>
+    {% endif %}
+
+  </div><br>
+  <div class="row">
+   {%if businesses%}
+    {% for business in businesses %}
+    <div class="col-md-8">
+      <div class="card"style="width:30rem;height:30rem; background-color: #100e17;" >
+        <h1 style="color: blanchedalmond;">{{business.name}}</h1>
+          <img style="width: 380px; height: 450px; position: relative; left: 50px;" src="{{business.logo.url}}">
+      </div>
+    </div>
+    {% endfor %}
+    {%endif%}
+ 
+  </div>
+</div>
+{% endblock %}

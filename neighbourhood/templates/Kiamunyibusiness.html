@@ -43,6 +43,29 @@
         </ul>
        </div>
 
+       <div class="col-sm-4 col-md-4 navbar-right">
+        <form class="navbar-form" role="search" action="{% url 'search' %}">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search For Businesses"
+              name="business"
+              width="40px"
+            />
+            <div class="input-group-btn">
+              <button
+                class="btn btn-info"
+                type="submit"
+                style="width: 80px; height: 30px; text-align: center"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
 </nav>
 <br><br>
 

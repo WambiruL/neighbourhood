@@ -68,9 +68,10 @@ class Business(models.Model):
         return self.name
 
     @classmethod
-    def search_by_business_name(cls, search_term):
-        business = cls.objects.filter(business_name__icontains=search_term)
-        return business
+    def search_by_business_name(cls,search_term):
+        businesses = cls.objects.filter(name__icontains=search_term)
+        print(businesses)
+        return businesses
 
     def save_business(self):
         self.save()

@@ -31,5 +31,5 @@ urlpatterns=[
      url(r'post_form/',views.submitPostK,name='post_form'),
       url(r'post_form/',views.submitPostL,name='post_form'),
        url(r'post_form/',views.submitPostM,name='post_form'),
-
+       url(r'^search/',views.search_results,name='search_results'),
 ]
