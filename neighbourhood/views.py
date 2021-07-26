@@ -63,6 +63,11 @@ def lanetAuth(request):
    authorities = Authorities.objects.filter(neighbourhood=lanet_neighbourhood)
    return render(request,'authorities.html', {'authorities':authorities})
 
+def lanetHealth(request):
+   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   hcenters = Health.objects.filter(neighbourhood=lanet_neighbourhood)
+   return render(request,'health.html', {'hcenters':hcenters})
+
 
 def lanet(request):
    lanet= Neighbourhood.objects.get(pk=1)

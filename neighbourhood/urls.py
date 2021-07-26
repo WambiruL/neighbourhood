@@ -14,6 +14,7 @@ urlpatterns=[
     url(r'kiamunyi/',views.kiamunyi,name='kiamunyi'),
     url(r'business/',views.lanetBusiness,name='business'),
     url(r'auth/',views.lanetAuth,name='auth'),
+      url(r'health/',views.lanetHealth,name='health'),
     url(r'milimaniB/',views.milimaniBusiness,name='milimaniB'),
     url(r'kiamunyiB/',views.kiamunyiBusiness,name='kiamunyiB'),
     url(r'business_form/',views.submitBusiness,name='business_form'),
