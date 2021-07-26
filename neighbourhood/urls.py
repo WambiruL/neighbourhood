@@ -14,7 +14,7 @@ urlpatterns=[
     url(r'kiamunyi/',views.kiamunyi,name='kiamunyi'),
     url(r'Lbusiness/',views.lanetBusiness,name='Lbusiness'),
     url(r'Lauth/',views.lanetAuth,name='Lauth'),
-     url(r'Mauth/',views.milimaniAuth,name='Mauth'),
+    url(r'Mauth/',views.milimaniAuth,name='Mauth'),
     url(r'Lhealth/',views.lanetHealth,name='Lhealth'),
     url(r'Mhealth/',views.milimaniHealth,name='Mhealth'),
     url(r'Mbusiness/',views.milimaniBusiness,name='Mbusiness'),
@@ -25,4 +25,11 @@ urlpatterns=[
     url(r'Kbusiness/',views.kiamunyiBusiness,name='Kbusiness'),
     url(r'Kauth/',views.kiamunyiAuth,name='Kauth'),
     url(r'Khealth/',views.kiamunyiHealth,name='Khealth'),
+    url(r'LPosts/',views.lanetPost,name='LPosts'),
+    url(r'KPosts/',views.kiamunyiPost,name='KPosts'),
+    url(r'MPosts/',views.milimaniPost,name='MPosts'),
+     url(r'post_form/',views.submitPostK,name='post_form'),
+      url(r'post_form/',views.submitPostL,name='post_form'),
+       url(r'post_form/',views.submitPostM,name='post_form'),
+
 ]

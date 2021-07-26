@@ -28,3 +28,10 @@ class BusinessUploadForm(forms.ModelForm):
         model = Business
         fields = ['name','email','logo','description','owner','neighbourhood']
 
+class PostUploadForm(forms.ModelForm):
+
+    class Meta:
+        model = BlogPost
+        fields = ['title','image','post','neighbourhood','avatar']
+
+

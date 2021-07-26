@@ -94,3 +94,7 @@ body{
 a:hover{
     text-decoration: none;
 }
+.card-img-top{
+    width: 400px;
+    height: 500px;
+}

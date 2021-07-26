@@ -98,6 +98,21 @@ def kiamunyiHealth(request):
    hcenters = Health.objects.filter(neighbourhood=kiamunyi_neighbourhood)
    return render(request,'Kiamunyihealth.html', {'hcenters':hcenters})
 
+def lanetPost(request):
+   lanet_neighbourhood = Neighbourhood.objects.get(pk=1)
+   posts = BlogPost.objects.filter(neighbourhood=lanet_neighbourhood)
+   return render(request,'LanetPosts.html', {'posts':posts})
+
+def milimaniPost(request):
+   milimani_neighbourhood = Neighbourhood.objects.get(pk=3)
+   posts = BlogPost.objects.filter(neighbourhood=milimani_neighbourhood)
+   return render(request,'MilimaniPosts.html', {'posts':posts})
+
+def kiamunyiPost(request):
+   kiamunyi_neighbourhood = Neighbourhood.objects.get(pk=2)
+   posts = BlogPost.objects.filter(neighbourhood=kiamunyi_neighbourhood)
+   return render(request,'KiamunyiPosts.html', {'posts':posts})
+
 
 @login_required(login_url='/login')
 def lanet(request):
@@ -157,6 +172,48 @@ def submitBusinessM(request):
         form =BusinessUploadForm()
             
     return render(request,'business_form.html',{"form":form,})
+
+def submitPostL(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('LPosts')
+    else:
+        form =PostUploadForm()
+            
+    return render(request,'post_form.html',{"form":form,})
+
+def submitPostK(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('KPosts')
+    else:
+        form =PostUploadForm()
+            
+    return render(request,'post_form.html',{"form":form,})
+
+def submitPostM(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('MPosts')
+    else:
+        form =PostUploadForm()
+            
+    return render(request,'post_form.html',{"form":form,})
 
 
 

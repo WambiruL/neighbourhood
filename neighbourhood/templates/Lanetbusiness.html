@@ -1,10 +1,11 @@
 {%extends 'index.html'%}
 {%load static%}
 {%load bootstrap4%}
+
 {%block content%}
 
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" style="color: white;" href="{%url 'index' %}"><h3><strong>NEIGHBOURHOOD WATCH</strong></h3></a>
+    <a class="navbar-brand" style="color: white;" href="#"><h3><strong>NEIGHBOURHOOD WATCH</strong></h3></a>
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +24,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="bus">Business</span></a>
             <ul class="dropdown-menu" id="bus-menu" style="text-align: center; font-size: 15px; background-color: burlywood;" role="menu">
               <li>
-                <a href="{%url 'Mbusiness'%}" style="color: black;">View Businesses</a>
+                <a href="{%url 'Lbusiness'%}" style="color: black;">View Businesses</a>
               </li>
               <hr>
               <li>
@@ -37,12 +38,19 @@
           <li class="nav-item">
             <a class="nav-link" href="{%url 'Lhealth'%}" data-offset="90">Health Services</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'LPosts'%}" data-offset="90">Blog Posts</a>
+          </li>
         </ul>
        </div>
 
 </nav>
 <br><br>
-<a href="{%url 'business_form'%}"><button class="btn btn" style="background-color: bisque; text-align: center;position: relative;left: 100px;width: 200px; height: 100px; border-radius: 50px;">Submit your business</button></a>
+<div class="text-center">
+  <a href="{% url 'business_form'%}" >
+      <button class="btn btn-primary" style="height:50px;  margin-top: -6px;">Submit Your Business</button>
+  </a>
+</div>
 <br><br>
 <div class="row">
     {% for business in businesses %}

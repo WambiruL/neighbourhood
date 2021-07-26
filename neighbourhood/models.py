@@ -96,5 +96,18 @@ class Health(models.Model):
     def __str__(self):
         return self.name
 
+class BlogPost(models.Model):
+    title = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='post/')
+    post = HTMLField()
+    user= models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
+    neighbourhood= models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,null=True,blank=True)
+    post_date = models.DateTimeField(auto_now_add=True)
+    avatar = models.ImageField(upload_to='avatars/')
+    author=models.CharField(max_length=200,null=True)
+
+    def __str__(self):
+        return self.title
+
 
 
